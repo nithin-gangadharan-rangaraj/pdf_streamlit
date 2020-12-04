@@ -13,6 +13,6 @@ def read_pdf(file):
 
 def main():
 	uploaded_file = st.file_uploader("Choose a file")
-  	if uploaded_file is not None:
-    	raw_text = read_pdf(docx_file)
-    	st.write(raw_text)
+	if uploaded_file is not None:
+		raw_text = read_pdf(docx_file)
+		st.write(raw_text)
