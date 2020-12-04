@@ -12,7 +12,7 @@ def read_pdf(file):
 	return all_page_text
 
 def main():
-  uploaded_file = st.file_uploader("Choose a file")
-  if uploaded_file is not None:
-    raw_text = read_pdf(docx_file)
-		st.write(raw_text)
+	uploaded_file = st.file_uploader("Choose a file")
+  	if uploaded_file is not None:
+    		raw_text = read_pdf(docx_file)
+    		st.write(raw_text)
