@@ -7,8 +7,8 @@ def main():
 	if docx_file is not None:
     		try:
 			with pdfplumber.open(docx_file) as pdf:
-			page = pdf.pages[0]
-			st.write(page.extract_text())
+				page = pdf.pages[0]
+				st.write(page.extract_text())
 		except:
 			st.write("None")
 
