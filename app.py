@@ -10,7 +10,7 @@ def main():
 				page = pdf.pages[0]
 				st.write(page.extract_text())
 		except:
-			st.write("None")
+			st.write("No data")
 
 if __name__ == '__main__':
 	main()
