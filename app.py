@@ -6,7 +6,7 @@ PAGE_CONFIG = {"page_title":"Arsya.io","page_icon":":smiley:","layout":"centered
 st.set_page_config(**PAGE_CONFIG)
 
 def main():
-	st.title("Hello Peeda Yuvan!")
+	st.title("Hello Saannmyr!")
 	uploaded_file = st.file_uploader("Choose a image file", type="jpg")
 	if uploaded_file is not None:
     		# Convert the file to an opencv image.
