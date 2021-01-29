@@ -14,7 +14,7 @@ background-size: cover;
 }
 </style>
 '''
-
+clf = joblib.load('prediction_model.pkl')
 
 def main():
 	st.title("Hello Sannamyr!")
