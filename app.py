@@ -16,17 +16,34 @@ background-size: cover;
 '''
 clf = joblib.load('prediction_model.pkl')
 
-def main():
-	st.title("Hello Sannamyr!")
-	st.markdown(html, unsafe_allow_html=True)
-	uploaded_file = st.file_uploader("Choose a image file", type="jpg")
-	if uploaded_file is not None:
-    		# Convert the file to an opencv image.
-    		file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
-    		opencv_image = cv2.imdecode(file_bytes, 1)
+def scale_fun(data):
+	mean = [ 51.12846111, 240.48910043, 135.62179425,  84.37183021, 26.05929871,  75.67808511,  83.90784418]
+	scale = [ 8.29909773, 45.64248672, 23.34040109, 12.31718928,  3.94429646, 11.46452091, 29.47992596]
+	transformed_data = []
+	for i in range(0,7):
+		x = (data[i] - mean[i])/scale[i]
+		transformed_data.append(round(x, 8))
+	return(transformed_data)
 
-    		# Now do something with the image! For example, let's display it:
-    		st.image(opencv_image, channels="BGR")
+def main():
+	st.title("Heart Risk prediction!")
+	st.markdown(html, unsafe_allow_html=True)
+	age = st.number_input("Enter Age")
+	totChol = st.number_input("Enter Cholesterol")
+	sysBP = st.number_input("Enter Systolic BP")
+	diaBP = st.number_input("Enter Diastolic BP")
+	BMI = st.number_input("Enter BMI")
+	heartrate = st.number_input("Enter Heart Rate")
+	glucose = st.number_input("Enter Glucose")
+	
+	x = [age, totChol, sysBP, diaBP, BMI, heartrate, glucose]
+	new = np.array(scale_fun(x))
+	if(st.button("Predict")):
+		if (clf.predict(new.reshape(1, -1))==1):
+  			st.text("Risk")
+		else:
+  			st.text("Safe")
+	
 
 if __name__ == '__main__':
 	main()
