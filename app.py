@@ -38,7 +38,7 @@ def main():
 	BMI = st.number_input("Enter BMI")
 	heartrate = st.number_input("Enter Heart Rate")
 	glucose = st.number_input("Enter Glucose")
-	
+	st.text(clf)
 	x = [age, totChol, sysBP, diaBP, BMI, heartrate, glucose]
 	new = np.array(scale_fun(x))
 	if(st.button("Predict")):
