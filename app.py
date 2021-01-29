@@ -2,7 +2,6 @@ import streamlit as st
 import cv2
 import numpy as np
 import pickle
-from sklearn.svm import SVC
 
 PAGE_CONFIG = {"page_title":"Arsya.io","page_icon":":smiley:","layout":"centered"}
 st.set_page_config(**PAGE_CONFIG)
@@ -17,6 +16,9 @@ background-size: cover;
 '''
 pickle_in = open('knn.pkl', 'rb') 
 clf = pickle.load(pickle_in)
+
+pickle_in1 = open('classifier1.pkl','rb')
+clf_svm = pickle.load(pickle_in1)
 
 def scale_fun(data):
 	mean = [ 51.12846111, 240.48910043, 135.62179425,  84.37183021, 26.05929871,  75.67808511,  83.90784418]
@@ -40,7 +42,13 @@ def main():
 	st.text(clf)
 	x = [age, totChol, sysBP, diaBP, BMI, heartrate, glucose]
 	new = np.array(scale_fun(x))
-	if(st.button("Predict")):
+	if(st.button("Predict using KNN")):
+		if (clf.predict(new.reshape(1, -1))==1):
+  			st.text("Risk")
+		else:
+  			st.text("Safe")
+	st.text(clf_svm)
+	if(st.button("Predict using SVM")):
 		if (clf.predict(new.reshape(1, -1))==1):
   			st.text("Risk")
 		else:
