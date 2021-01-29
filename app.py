@@ -18,7 +18,7 @@ background-size: cover;
 pickle_in = open('knn.pkl', 'rb') 
 clf = pickle.load(pickle_in)
 
-pickle_in1 = open('classifier1.pkl','rb')
+pickle_in1 = open('svm_classifier.pkl','rb')
 clf_svm = pickle.load(pickle_in1)
 
 def scale_fun(data):
