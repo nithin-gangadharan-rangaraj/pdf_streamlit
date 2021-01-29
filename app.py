@@ -8,7 +8,7 @@ st.set_page_config(**PAGE_CONFIG)
 html = '''
 <style>
 body {
-background-image: url("https://media.istockphoto.com/vectors/human-heart-anatomy-form-lines-and-triangles-point-connecting-network-vector-id943649026?k=6&m=943649026&s=612x612&w=0&h=zPjXH1Dfk8HJQJs-1OyZVyN7OJKv9uhl5n2SvsWf0Io=");
+background-image: url("https://i.pinimg.com/originals/ec/d5/0e/ecd50ed16de87c9a9b972aeba64de53f.jpg");
 background-size: cover;
 }
 </style>
