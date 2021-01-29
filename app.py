@@ -2,7 +2,7 @@ import streamlit as st
 import cv2
 import numpy as np
 import pickle
-from sklearn.externals import joblib
+import joblib
 
 
 PAGE_CONFIG = {"page_title":"Arsya.io","page_icon":":smiley:","layout":"centered"}
