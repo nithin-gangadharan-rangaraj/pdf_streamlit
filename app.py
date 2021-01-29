@@ -2,6 +2,7 @@ import streamlit as st
 import cv2
 import numpy as np
 import pickle
+import sklean
 
 PAGE_CONFIG = {"page_title":"Arsya.io","page_icon":":smiley:","layout":"centered"}
 st.set_page_config(**PAGE_CONFIG)
@@ -53,6 +54,7 @@ def main():
   			st.text("Risk")
 		else:
   			st.text("Safe")
+	st.text(sklearn.__version__)
 	
 
 if __name__ == '__main__':
