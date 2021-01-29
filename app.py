@@ -1,7 +1,7 @@
 import streamlit as st
 import cv2
 import numpy as np
-from sklearn.externals import joblib
+import pickle
 
 PAGE_CONFIG = {"page_title":"Arsya.io","page_icon":":smiley:","layout":"centered"}
 st.set_page_config(**PAGE_CONFIG)
@@ -14,7 +14,8 @@ background-size: cover;
 }
 </style>
 '''
-clf = joblib.load('prediction_model.pkl')
+pickle_in = open('prediction_model.pkl', 'rb') 
+clf = pickle.load(pickle_in)
 
 def scale_fun(data):
 	mean = [ 51.12846111, 240.48910043, 135.62179425,  84.37183021, 26.05929871,  75.67808511,  83.90784418]
