@@ -2,7 +2,7 @@ import streamlit as st
 import cv2
 import numpy as np
 import pickle
-import sklearn==0.22.2.post1
+import sklearn=0.22.2.post1
 
 PAGE_CONFIG = {"page_title":"Arsya.io","page_icon":":smiley:","layout":"centered"}
 st.set_page_config(**PAGE_CONFIG)
