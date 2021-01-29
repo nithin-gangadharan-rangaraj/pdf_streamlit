@@ -15,7 +15,7 @@ background-size: cover;
 }
 </style>
 '''
-pickle_in = open('classifier1.pkl', 'rb') 
+pickle_in = open('knn.pkl', 'rb') 
 clf = pickle.load(pickle_in)
 
 def scale_fun(data):
