@@ -8,7 +8,7 @@ st.set_page_config(**PAGE_CONFIG)
 html = '''
 <style>
 body {
-background-image: url("https://images.freecreatives.com/wp-content/uploads/2015/04/Download-Free-Crumpled-White-Paper-Texture.jpg");
+background-image: url("https://img.freepik.com/free-vector/white-elegant-texture-wallpaper_23-2148421854.jpg?size=626&ext=jpg&ga=GA1.2.145878890.1611360000");
 background-size: cover;
 }
 </style>
