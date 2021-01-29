@@ -49,7 +49,7 @@ def main():
   			st.text("Safe")
 	st.text(clf_svm)
 	if(st.button("Predict using SVM")):
-		if (clf.predict(new.reshape(1, -1))==1):
+		if (clf_svm.predict(new.reshape(1, -1))==1):
   			st.text("Risk")
 		else:
   			st.text("Safe")
