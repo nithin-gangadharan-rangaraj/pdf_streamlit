@@ -34,10 +34,9 @@ def scale_fun(data):
 
 def main():
 	st.title("Heart Risk prediction!")
-	image = Image.open('heart.jpg')
-	st.image(image, use_column_width=True)
+	#image = Image.open('heart.jpg')
+	#st.image(image, use_column_width=True)
 	st.markdown(html, unsafe_allow_html=True)
-	#st.markdown("![Alt Text](https://wallpapercave.com/wp/wp2314600.jpg)")
 	age = st.number_input("Enter Age")
 	totChol = st.number_input("Enter Cholesterol")
 	sysBP = st.number_input("Enter Systolic BP")
