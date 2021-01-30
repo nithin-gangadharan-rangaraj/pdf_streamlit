@@ -4,7 +4,7 @@ import numpy as np
 import pickle
 import sklearn
 
-PAGE_CONFIG = {"page_title":"Arsya.io","page_icon":":smiley:","layout":"centered"}
+PAGE_CONFIG = {"page_title":"Heart Risk Prediction","page_icon":"✔","layout":"centered"}
 st.set_page_config(**PAGE_CONFIG)
 
 html = '''
