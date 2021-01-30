@@ -44,12 +44,19 @@ def main():
 	x = [age, totChol, sysBP, diaBP, BMI, heartrate, glucose]
 	new = np.array(scale_fun(x))
 	
-	if(st.button("Predict")):
-		if (clf_svm.predict(new.reshape(1, -1))==1):
-  			st.text("Risk")
-		elif (clf_svm.predict(new.reshape(1, -1))==0):
-  			st.text("Safe")
+	#if(st.button("Predict")):
+	#	if (clf_svm.predict(new.reshape(1, -1))==1):
+  	#		st.text("Risk")
+	#	elif (clf_svm.predict(new.reshape(1, -1))==0):
+  	#		st.text("Safe")
 	
+	if(st.button("Predict")):
+		probs = prediction_model.predict_proba(new.reshape(1, -1))
+		if (probs[0][1] > probs[0][0]):
+  			percentage = probs[0][1] * 100
+			st.text("You are ", round(percentage,2) , "% at a risk of developing CVD!")
+		elif (probs[0][0] > probs[0][1]):
+ 			st.text("No worries, You are safe!")
 
 if __name__ == '__main__':
 	main()
