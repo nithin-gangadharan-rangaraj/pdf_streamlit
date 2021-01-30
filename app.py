@@ -15,11 +15,11 @@ background-size: cover;
 }
 </style>
 '''
-pickle_in = open('knn.pkl', 'rb') 
-clf = pickle.load(pickle_in)
+#pickle_in = open('knn.pkl', 'rb') 
+#clf = pickle.load(pickle_in)
 
-pickle_in1 = open('svm_classifier.pkl','rb')
-clf_svm = pickle.load(pickle_in1)
+pickle_in = open('svm_classifier.pkl','rb')
+clf_svm = pickle.load(pickle_in)
 
 def scale_fun(data):
 	mean = [ 51.27028395, 240.94786493, 136.17309932,  84.32887391, 26.09129934,  75.99169532,  83.91940731]
@@ -41,15 +41,9 @@ def main():
 	BMI = st.number_input("Enter BMI")
 	heartrate = st.number_input("Enter Heart Rate")
 	glucose = st.number_input("Enter Glucose")
-	st.text(clf)
 	x = [age, totChol, sysBP, diaBP, BMI, heartrate, glucose]
 	new = np.array(scale_fun(x))
-	if(st.button("Predict using KNN")):
-		if (clf.predict(new.reshape(1, -1))==1):
-  			st.text("Risk")
-		else:
-  			st.text("Safe")
-	st.text(clf_svm)
+	
 	if(st.button("Predict using SVM")):
 		if (clf_svm.predict(new.reshape(1, -1))==1):
   			st.text("Risk")
