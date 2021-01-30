@@ -33,7 +33,7 @@ def scale_fun(data):
 
 
 def main():
-	st.title("Heart Risk prediction!")
+	st.title("Heart Risk Prediction")
 	#image = Image.open('heart.jpg')
 	#st.image(image, use_column_width=True)
 	st.markdown(html, unsafe_allow_html=True)
