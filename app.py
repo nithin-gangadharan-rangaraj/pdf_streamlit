@@ -22,13 +22,14 @@ pickle_in1 = open('svm_classifier.pkl','rb')
 clf_svm = pickle.load(pickle_in1)
 
 def scale_fun(data):
-	mean = [ 51.12846111, 240.48910043, 135.62179425,  84.37183021, 26.05929871,  75.67808511,  83.90784418]
-	scale = [ 8.29909773, 45.64248672, 23.34040109, 12.31718928,  3.94429646, 11.46452091, 29.47992596]
+	mean = [ 51.27028395, 240.94786493, 136.17309932,  84.32887391, 26.09129934,  75.99169532,  83.91940731]
+	scale = [ 8.40482301, 45.21403725, 23.51018094, 12.35229104,  3.96554568, 11.60813337, 29.02018717]
 	transformed_data = []
 	for i in range(0,7):
 		x = (data[i] - mean[i])/scale[i]
 		transformed_data.append(round(x, 8))
 	return(transformed_data)
+
 
 def main():
 	st.title("Heart Risk prediction!")
@@ -53,8 +54,7 @@ def main():
 		if (clf_svm.predict(new.reshape(1, -1))==1):
   			st.text("Risk")
 		else:
-  			st.text("Safe")
-	st.text(sklearn.__version__)
+  			st.text("Safe :)")
 	
 
 if __name__ == '__main__':
