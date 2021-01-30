@@ -5,7 +5,6 @@ import pickle
 import sklearn
 from PIL import Image
 import pandas as pd
-import seaborn as sns
 
 PAGE_CONFIG = {"page_title":"Heart Risk Prediction","page_icon":"👨‍⚕️","layout":"centered"}
 st.set_page_config(**PAGE_CONFIG)
@@ -64,8 +63,8 @@ def main():
 	
 	if(st.sidebar.checkbox("Age analysis")):
 		positive_cases = data[data['TenYearCHD'] == 1]
-		sns.countplot(x='age',data = positive_cases, hue = 'TenYearCHD', palette='husl')
-		st.pyplot()
+		#sns.countplot(x='age',data = positive_cases, hue = 'TenYearCHD', palette='husl')
+		#st.pyplot()
 
 if __name__ == '__main__':
 	main()
