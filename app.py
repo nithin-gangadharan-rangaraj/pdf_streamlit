@@ -36,9 +36,7 @@ def main():
 	st.markdown(html, unsafe_allow_html=True)
 	st.title("Heart Risk Prediction")
 	st.sidebar.title("Sidebar")
-	if(st.sidebar.button("Risk predictor")):
-	#image = Image.open('heart.jpg')
-	#st.image(image, use_column_width=True)
+	if(st.sidebar.checkbox("Risk predictor")):
 		age = st.number_input("Enter Age")
 		totChol = st.number_input("Enter Cholesterol")
 		sysBP = st.number_input("Enter Systolic BP")
@@ -48,13 +46,6 @@ def main():
 		glucose = st.number_input("Enter Glucose")
 		x = [age, totChol, sysBP, diaBP, BMI, heartrate, glucose]
 		new = np.array(scale_fun(x))
-	
-	#if(st.button("Predict")):
-	#	if (clf_svm.predict(new.reshape(1, -1))==1):
-  	#		st.text("Risk")
-	#	elif (clf_svm.predict(new.reshape(1, -1))==0):
-  	#		st.text("Safe")
-	
 		if(st.button("Predict")):
 			probs = clf_svm.predict_proba(new.reshape(1, -1))
 			if (probs[0][1] > probs[0][0]):
