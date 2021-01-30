@@ -22,6 +22,8 @@ background-size: cover;
 pickle_in = open('svm_classifier.pkl','rb')
 clf_svm = pickle.load(pickle_in)
 
+st.title("Heart Risk Prediction")
+
 def scale_fun(data):
 	mean = [ 51.27028395, 240.94786493, 136.17309932,  84.32887391, 26.09129934,  75.99169532,  83.91940731]
 	scale = [ 8.40482301, 45.21403725, 23.51018094, 12.35229104,  3.96554568, 11.60813337, 29.02018717]
@@ -34,10 +36,10 @@ def scale_fun(data):
 
 def main():
 	st.markdown(html, unsafe_allow_html=True)
-	st.title("Heart Risk Prediction")
 	st.sidebar.title("Sidebar")
 	st.sidebar.write("Check the box for predicting *heart risk*")
 	if(st.sidebar.checkbox("Risk predictor")):
+		st.subheader("Enter the following parameters for prediction")
 		age = st.number_input("Enter Age")
 		totChol = st.number_input("Enter Cholesterol")
 		sysBP = st.number_input("Enter Systolic BP")
