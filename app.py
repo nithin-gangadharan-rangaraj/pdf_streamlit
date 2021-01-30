@@ -44,11 +44,11 @@ def main():
 	x = [age, totChol, sysBP, diaBP, BMI, heartrate, glucose]
 	new = np.array(scale_fun(x))
 	
-	if(st.button("Predict using SVM")):
+	if(st.button("Predict")):
 		if (clf_svm.predict(new.reshape(1, -1))==1):
   			st.text("Risk")
 		elif (clf_svm.predict(new.reshape(1, -1))==0):
-  			st.text("Safe :)")
+  			st.text("Safe")
 	
 
 if __name__ == '__main__':
