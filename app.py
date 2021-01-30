@@ -3,6 +3,7 @@ import cv2
 import numpy as np
 import pickle
 import sklearn
+from PIL import Image
 
 PAGE_CONFIG = {"page_title":"Heart Risk Prediction","page_icon":"👨‍⚕️","layout":"centered"}
 st.set_page_config(**PAGE_CONFIG)
@@ -33,6 +34,8 @@ def scale_fun(data):
 
 def main():
 	st.title("Heart Risk prediction!")
+	image = Image.open('https://wallpapercave.com/wp/wp2314600.jpg')
+	st.image(image, use_column_width=True)
 	st.markdown(html, unsafe_allow_html=True)
 	age = st.number_input("Enter Age")
 	totChol = st.number_input("Enter Cholesterol")
