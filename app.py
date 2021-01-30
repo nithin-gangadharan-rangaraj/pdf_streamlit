@@ -36,6 +36,7 @@ def main():
 	st.markdown(html, unsafe_allow_html=True)
 	st.title("Heart Risk Prediction")
 	st.sidebar.title("Sidebar")
+	st.sidebar.text("Check the box for predicting heart risk")
 	if(st.sidebar.checkbox("Risk predictor")):
 		age = st.number_input("Enter Age")
 		totChol = st.number_input("Enter Cholesterol")
