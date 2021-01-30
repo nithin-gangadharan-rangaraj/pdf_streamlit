@@ -4,6 +4,7 @@ import numpy as np
 import pickle
 import sklearn
 from PIL import Image
+import pandas as pd
 
 PAGE_CONFIG = {"page_title":"Heart Risk Prediction","page_icon":"👨‍⚕️","layout":"centered"}
 st.set_page_config(**PAGE_CONFIG)
@@ -21,6 +22,9 @@ background-size: cover;
 
 pickle_in = open('svm_classifier.pkl','rb')
 clf_svm = pickle.load(pickle_in)
+
+pickle_in1 = open('full_data','rb')
+data = pd.DataFrame(pickle.load(pickle_in1))
 
 st.title("Heart Risk Prediction")
 
