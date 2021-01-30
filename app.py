@@ -54,9 +54,9 @@ def main():
 		probs = clf_svm.predict_proba(new.reshape(1, -1))
 		if (probs[0][1] > probs[0][0]):
 			percentage = probs[0][1] * 100
-			st.text("You are ",round(percentage,2),"% at a risk of developing CVD!")
+			st.write("You are ",round(percentage,2),"% at a risk of developing CVD!")
 		elif (probs[0][0] > probs[0][1]):
-			st.text("No worries, You are safe!")
+			st.write("No worries, You are safe!")
 
 if __name__ == '__main__':
 	main()
