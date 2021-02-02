@@ -3,6 +3,7 @@ import numpy as np
 import pickle
 from PIL import Image
 #import sklearn
+import joblib
 
 PAGE_CONFIG = {"page_title":"Heart Risk Prediction","page_icon":"👨‍⚕️","layout":"centered"}
 st.set_page_config(**PAGE_CONFIG)
@@ -16,8 +17,10 @@ background-size: cover;
 </style>
 '''
 
-pickle_in = open('svm_classifier.pkl','rb')
-clf_svm = pickle.load(pickle_in)
+#pickle_in = open('svm_classifier.pkl','rb')
+#clf_svm = pickle.load(pickle_in)
+
+clf_svm = joblib.load('svm_classifier.pkl')
 
 st.title("Heart Risk Prediction")
 
