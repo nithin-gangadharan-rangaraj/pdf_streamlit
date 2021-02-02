@@ -1,5 +1,4 @@
 streamlit
-opencv-python-headless
 numpy
 pickle
 scikit-learn==0.22.2
