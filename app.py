@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import pickle
 from PIL import Image
-import pandas as pd
 import sklearn
 
 PAGE_CONFIG = {"page_title":"Heart Risk Prediction","page_icon":"👨‍⚕️","layout":"centered"}
@@ -16,14 +15,9 @@ background-size: cover;
 }
 </style>
 '''
-#pickle_in = open('knn.pkl', 'rb') 
-#clf = pickle.load(pickle_in)
 
 pickle_in = open('svm_classifier.pkl','rb')
 clf_svm = pickle.load(pickle_in)
-
-pickle_in1 = open('full_data','rb')
-data = pd.DataFrame(pickle.load(pickle_in1))
 
 st.title("Heart Risk Prediction")
 
@@ -60,11 +54,7 @@ def main():
 			elif (probs[0][0] > probs[0][1]):
 				st.write("No worries, You are safe!")
 	
-	if(st.sidebar.checkbox("Age analysis")):
-		positive_cases = data[data['TenYearCHD'] == 1]
-		#sns.countplot(x='age',data = positive_cases, hue = 'TenYearCHD', palette='husl')
-		#st.pyplot()
-
+		
 if __name__ == '__main__':
 	main()
 
