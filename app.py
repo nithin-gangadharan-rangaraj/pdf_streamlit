@@ -1,7 +1,6 @@
 import streamlit as st
 import numpy as np
 import pickle
-import sklearn
 from PIL import Image
 import pandas as pd
 
