@@ -1,6 +1,7 @@
 streamlit
 numpy
 scikit-learn
+sklearn
 pandas
 pickle
 pillow
