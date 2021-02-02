@@ -3,5 +3,5 @@ numpy
 scikit-learn
 sklearn
 pandas
-pickle
+joblib
 pillow
