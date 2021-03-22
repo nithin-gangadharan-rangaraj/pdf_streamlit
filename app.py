@@ -14,6 +14,8 @@ body {
 background-image: url("https://img.freepik.com/free-vector/white-elegant-texture-wallpaper_23-2148421854.jpg?size=626&ext=jpg&ga=GA1.2.145878890.1611360000");
 background-size: cover;
 }
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
 </style>
 '''
 
@@ -36,13 +38,6 @@ def scale_fun(data):
 
 def main():
 	st.markdown(html, unsafe_allow_html=True)
-        hide_streamlit_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            </style>
-            """
-        st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 	st.sidebar.title("Sidebar")
 	st.sidebar.write("Check the box for predicting *heart risk*")
 	if(st.sidebar.checkbox("Risk predictor")):
